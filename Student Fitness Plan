@@ -1,0 +1,10 @@
+print("--------WELCOME TO FITNESS FOR STUDENTS--------")
+print("We need your data to make 2 plans suitable for you")
+
+#Collect user data
+weight= float(input("Enter weight in kg: "))
+height= float(input("Enter height in cm: "))
+age= int(input("Enter age in years: "))
+gender= input("Enter gender (m/f): ").lower()
+
+
