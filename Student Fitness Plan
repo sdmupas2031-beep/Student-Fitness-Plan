@@ -1,10 +1,5 @@
-print("--------WELCOME TO FITNESS FOR STUDENTS--------")
-print("We need your data to make 2 plans suitable for you")
-
-#Collect user data
-weight= float(input("Enter weight in kg: "))
-height= float(input("Enter height in cm: "))
-age= int(input("Enter age in years: "))
-gender= input("Enter gender (m/f): ").lower()
-
-
+#==========================================
+print("Project Title: Student Fitness & Energy Planner")
+print("Description: A tool for Pisay scholars to calculate BMR and TDEE")
+print("             with a 7-day calorie projection and input validation.")
+#===========================================
