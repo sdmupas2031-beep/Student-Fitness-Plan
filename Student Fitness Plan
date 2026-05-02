@@ -1,5 +1,5 @@
 #==========================================
 print("Project Title: Student Fitness & Energy Planner")
 print("Description: A tool for Pisay scholars to calculate BMR and TDEE")
-print("             with a 7-day calorie projection and input validation.")
+print("            with a 7-day calorie projection and input validation.")
 #===========================================
