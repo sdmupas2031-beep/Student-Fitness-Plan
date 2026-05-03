@@ -1,3 +1,24 @@
+#MUPAS' PART
+# Main Program Execution Loop (Requirement 2)
+is_running = True
+
+while is_running:
+    print("\n--- Student Fitness & Energy Planner ---")
+    
+    # Input with Basic Validation (Requirement 5)
+    try:
+        user_weight = float(input("Enter weight in kg: "))
+        user_height = float(input("Enter height in cm: "))
+        user_age = int(input("Enter age in years: "))
+        user_gender = input("Enter gender (M/F): ").strip().lower()
+        
+        if user_gender not in ['m', 'f']:
+            print("Error: Please enter 'M' for Male or 'F' for Female.")
+            continue
+            
+    except ValueError:
+        print("Error: Please enter numerical values for weight, height, and age.")
+        continue
 # REAL'S PART
     # Process: Calculate Base Numbers (Requirement 4)
     calculated_bmr = CalculateBMR(user_weight, user_height, user_age, user_gender)
