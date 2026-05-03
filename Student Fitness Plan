@@ -1,3 +1,22 @@
+#SILAO'S PART
+def CalculateBMR(weight, height, age, gender):
+    """Processes the Basal Metabolic Rate using the Mifflin-St Jeor Equation."""
+    if gender.lower() == 'm':
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5
+    else:
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161
+    return bmr
+
+def CalculateTDEE(bmr, activity_level):
+    """Processes Total Daily Energy Expenditure based on activity multipliers."""
+    multipliers = {
+        "1": 1.2,    # Sedentary (Study-heavy days)
+        "2": 1.375,  # Lightly active
+        "3": 1.55,   # Moderately active (P.E. days)
+    }
+    # Default to 1.2 if input is invalid
+    return bmr * multipliers.get(activity_level, 1.2)
+
 #MUPAS' PART
 # Main Program Execution Loop (Requirement 2)
 is_running = True
