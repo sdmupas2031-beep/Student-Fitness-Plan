@@ -1,5 +1,37 @@
-#==========================================
-print("Project Title: Student Fitness & Energy Planner")
-print("Description: A tool for Pisay scholars to calculate BMR and TDEE")
-print("            with a 7-day calorie projection and input validation.")
-#===========================================
+# REAL'S PART
+    # Process: Calculate Base Numbers (Requirement 4)
+    calculated_bmr = CalculateBMR(user_weight, user_height, user_age, user_gender)
+    
+    print("\nSelect Activity Level:")
+    print("1. Sedentary (Mostly studying)")
+    print("2. Lightly Active (Walking between labs)")
+    print("3. Moderately Active (Sports/P.E.)")
+    activity_choice = input("Enter choice (1-3): ")
+
+    final_tdee = CalculateTDEE(calculated_bmr, activity_choice)
+
+    # Output: Results (Requirement 4)
+    print(f"\n--- Your Daily Stats ---")
+    print(f"BMR (Base Metabolism): {calculated_bmr:.2f} kcal")
+    print(f"TDEE (Daily Expenditure): {final_tdee:.2f} kcal")
+
+    # For Loop Structure: Weekly Projection (Requirement 2)
+    print("\n--- 7-Day Calorie Projection ---")
+    days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    
+    for day in days_of_week:
+        # Selection Structure inside the loop (Requirement 1)
+        if day in ["Saturday", "Sunday"]:
+            daily_goal = final_tdee + 200 # Slightly more for weekend rest
+            note = "(Rest/Recovery)"
+        else:
+            daily_goal = final_tdee
+            note = "(Active Study Day)"
+        
+        print(f"{day}: {daily_goal:.2f} kcal {note}")
+
+    # Exit Condition for while loop
+    repeat = input("\nPerform another calculation? (yes/no): ").strip().lower()
+    if repeat != 'yes':
+        is_running = False
+        print("Stay healthy, scholar! Program exiting...")
